@@ -10,6 +10,7 @@ c.fillStyle = 'lightblue';
 c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 1
 class Sprite {
+  // the properties of the character
   constructor({ position, velocity }) {
     this.position = position;
     this.velocity = velocity;
@@ -19,16 +20,22 @@ class Sprite {
         position:this.position,
         height: 75,
         width: 125
-        
-
-
+    }
+    this.fight = {
+        position:this.position,
+        height: 75,
+        width: -25
     }
   }
+// creating the character
   draw(color) {
     c.fillStyle = color;
     c.fillRect(this.position.x, this.position.y, this.width, this.height,this.ablock);
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
+    c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
+
   }
+  // updating the game positions
   update(color) {
 		c.fillStyle = color
     this.draw();
@@ -36,7 +43,7 @@ class Sprite {
 		this.position.x = this.velocity.x + this.position.x;
     
 
-
+// the barriers for the game
 if (this.position.x >= 1000){
     this.velocity.x = 0
     this.position.x = 1000
@@ -63,6 +70,7 @@ if (this.position.x <= 0){
     }
   }
 }
+// the position of the character
 const player = new Sprite({
   position: { x: 20, y: 20 },
   velocity: { x: 0, y: 10 },
@@ -72,6 +80,7 @@ const enemy = new Sprite({
   position: { x: 900, y: 20 },
   velocity: { x: 0, y: 10 },
 });
+// running the game and its colors
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = "grey";
@@ -80,6 +89,7 @@ function animate() {
 	enemy.update("red");
 }
 animate();
+// the movement controls for the characters
 window.addEventListener("keydown",(event) =>{
 switch(event.key){
 case 'w':

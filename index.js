@@ -1,3 +1,9 @@
+//   TO DO
+// bigger and smaller character buttons
+// disappear on contact with enemy
+// collision detecter
+// interesting map(platforms,details)
+// add detail to character(face,sword,legs)
 // Import stylesheets
 import './style.css';
 
@@ -118,6 +124,6 @@ enemy.velocity.x = enemy.velocity.x +5
 break
 
 }
-
+// logs the information in the console
 console.log(event.key)
 })

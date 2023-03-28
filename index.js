@@ -32,6 +32,11 @@ class Sprite {
         height: 75,
         width: -25
     }
+    this.line = {
+      position:this.position,
+      height:-1000,
+      width:1
+    }
   }
 // creating the character
   draw(color) {
@@ -39,7 +44,7 @@ class Sprite {
     c.fillRect(this.position.x, this.position.y, this.width, this.height,this.ablock);
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
-
+    c.fillRect(this.line.position.x,this.line.position.y,this.line.width,this.line.height)
   }
   // updating the game positions
   update(color) {
@@ -81,7 +86,10 @@ const player = new Sprite({
   position: { x: 20, y: 20 },
   velocity: { x: 0, y: 10 },
 });
-
+const bob = new Sprite({
+  position: { x: 450, y: 20 },
+  velocity: { x: 0, y: 10 },
+});
 const enemy = new Sprite({
   position: { x: 900, y: 20 },
   velocity: { x: 0, y: 10 },
@@ -93,6 +101,7 @@ function animate() {
 	c.fillRect(0,0,canvas.width,canvas.height)
 	player.update("blue");
 	enemy.update("red");
+  bob.update("orange")
 }
 animate();
 // the movement controls for the characters
@@ -122,7 +131,18 @@ break
 case 'ArrowRight':
 enemy.velocity.x = enemy.velocity.x +5
 break
-
+case '8':
+bob.velocity.y = bob.velocity.y -10
+break
+case '5':
+  bob.velocity.y = bob.velocity.y +20
+break
+case '4':
+  bob.velocity.x = bob.velocity.x -5
+break
+case '6':
+  bob.velocity.x = bob.velocity.x +5
+break
 }
 // logs the information in the console
 console.log(event.key)

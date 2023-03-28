@@ -59,6 +59,11 @@ if (this.position.x >= 1000){
     this.velocity.x = 0
     this.position.x = 1000
 }
+if (this.position.x >= 500){
+  this.velocity.x = 0
+  this.position.x = 500
+  this.position.y = 10
+}
 if (this.position.x <= 0){
   this.velocity.x = 0
   this.position.x = 0
@@ -138,10 +143,10 @@ case '5':
   bob.velocity.y = bob.velocity.y +20
 break
 case '4':
-  bob.velocity.x = bob.velocity.x -5
+  bob.velocity.x = bob.velocity.x -20
 break
 case '6':
-  bob.velocity.x = bob.velocity.x +5
+  bob.velocity.x = bob.velocity.x +20
 break
 }
 // logs the information in the console

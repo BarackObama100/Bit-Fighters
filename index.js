@@ -1,9 +1,11 @@
 //   TO DO
-// bigger and smaller character buttons
-// disappear on contact with enemy
+// freeze button #2  dont use 1,gravity needs to be changed to be able to freeze
+// bigger and smaller character buttons#3
+// disappear on contact with enemy 
 // collision detecter
-// interesting map(platforms,details)
+// interesting map(platforms,details)  #1
 // add detail to character(face,sword,legs)
+
 // Import stylesheets
 import './style.css';
 
@@ -45,6 +47,7 @@ class Sprite {
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
     c.fillRect(this.line.position.x,this.line.position.y,this.line.width,this.line.height)
+    c.fillRect(512,288,100,10)
   }
   // updating the game positions
   update(color) {
@@ -54,16 +57,17 @@ class Sprite {
 		this.position.x = this.velocity.x + this.position.x;
     
 
-// the barriers for the game
+// the barriers for the game'
+if (this.position.x > 512 && this.position.x < 612){
+  this.velocity.y = 0
+  
+}
+
 if (this.position.x >= 1000){
     this.velocity.x = 0
     this.position.x = 1000
 }
-if (this.position.x >= 500){
-  this.velocity.x = 0
-  this.position.x = 500
-  this.position.y = 10
-}
+
 if (this.position.x <= 0){
   this.velocity.x = 0
   this.position.x = 0
@@ -79,13 +83,14 @@ if (this.position.x <= 0){
   
   
       }
-    else{
-      this.velocity.y = this.velocity.y + gravity
+  
 
-
+        else {
+        this.velocity.y = this.velocity.y + gravity
+      
+        }
     }
   }
-}
 // the position of the character
 const player = new Sprite({
   position: { x: 20, y: 20 },
@@ -99,6 +104,7 @@ const enemy = new Sprite({
   position: { x: 900, y: 20 },
   velocity: { x: 0, y: 10 },
 });
+
 // running the game and its colors
 function animate() {
 	window.requestAnimationFrame(animate);
@@ -124,6 +130,7 @@ break
 case 'd':
 player.velocity.x = player.velocity.x +5
 break
+
 case 'ArrowUp':
   enemy.velocity.y = enemy.velocity.y -10
 break

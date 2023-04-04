@@ -59,10 +59,13 @@ class Sprite {
 
 // the barriers for the game'
 if (this.position.x > 512 && this.position.x < 612){
-  this.velocity.y = 0
+  this.velocity.y = -1
   
 }
-
+if (this.position.x > 100 && this.position.x < 10){
+  this.velocity.y = -1
+  
+}
 if (this.position.x >= 1000){
     this.velocity.x = 0
     this.position.x = 1000

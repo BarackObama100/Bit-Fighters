@@ -66,7 +66,12 @@ if (this.position.x > 100 && this.position.x < 10){
   this.velocity.y = -1
   
 }
-// if(this.position.y + 150 + this.velocity.y > 278 && this.position.y +150 + this.velocity.y < 288 )
+if (this.position.y + 150 + this.velocity.y > 278 && this.position.y +150 + this.velocity.y < 288 ){
+  this.velocity.y = 0
+  console.log("bob")
+}
+  
+
 if (this.position.x >= 1000){
     this.velocity.x = 0
     this.position.x = 1000

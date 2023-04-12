@@ -47,7 +47,7 @@ class Sprite {
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
     c.fillRect(this.line.position.x,this.line.position.y,this.line.width,this.line.height)
-    c.fillRect(512,288,100,10)
+    c.fillRect(512,500,100,20)
   }
   // updating the game positions
   update(color) {
@@ -58,18 +58,12 @@ class Sprite {
     
 
 // the barriers for the game'
-if (this.position.x > 512 && this.position.x < 612){
+if (this.position.x > 512 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 520){
   this.velocity.y = -1
   
 }
-if (this.position.x > 100 && this.position.x < 10){
-  this.velocity.y = -1
-  
-}
-if (this.position.y + 150 + this.velocity.y > 278 && this.position.y +150 + this.velocity.y < 288 ){
-  this.velocity.y = 0
-  console.log("bob")
-}
+
+
   
 
 if (this.position.x >= 1000){

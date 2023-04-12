@@ -119,7 +119,7 @@ function animate() {
 	c.fillRect(0,0,canvas.width,canvas.height)
 	player.update("blue");
 	enemy.update("red");
-  bob.update("orangee")
+  bob.update("orange")
 }
 animate();
 // the movement controls for the characters

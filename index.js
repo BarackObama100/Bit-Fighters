@@ -47,7 +47,8 @@ class Sprite {
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
     c.fillRect(this.line.position.x,this.line.position.y,this.line.width,this.line.height)
-    c.fillRect(512,500,100,20)
+    c.fillStyle = "black";
+    c.fillRect(512,500,100,50)
   }
   // updating the game positions
   update(color) {
@@ -58,11 +59,14 @@ class Sprite {
     
 
 // the barriers for the game'
-if (this.position.x > 512 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 520){
+if (this.position.x > 500 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
   this.velocity.y = -1
   
 }
-
+if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
+  this.velocity.y = -1
+  
+}
 
   
 
@@ -115,7 +119,7 @@ function animate() {
 	c.fillRect(0,0,canvas.width,canvas.height)
 	player.update("blue");
 	enemy.update("red");
-  bob.update("orange")
+  bob.update("orangee")
 }
 animate();
 // the movement controls for the characters
@@ -135,7 +139,7 @@ player.velocity.x = player.velocity.x +5
 break
 
 case 'ArrowUp':
-  enemy.velocity.y = enemy.velocity.y -10
+  enemy.velocity.y = enemy.velocity.y -20
 break
 case 'ArrowDown':
 enemy.velocity.y = enemy.velocity.y +20
@@ -147,17 +151,21 @@ case 'ArrowRight':
 enemy.velocity.x = enemy.velocity.x +5
 break
 case '8':
-bob.velocity.y = bob.velocity.y -10
+bob.velocity.y = bob.velocity.y -20
 break
 case '5':
   bob.velocity.y = bob.velocity.y +20
 break
 case '4':
-  bob.velocity.x = bob.velocity.x -20
+  bob.velocity.x = bob.velocity.x -10
 break
 case '6':
-  bob.velocity.x = bob.velocity.x +20
+  bob.velocity.x = bob.velocity.x +10
 break
+
+case '3':
+  gravity = 0
+  break
 }
 // logs the information in the console
 console.log(event.key)

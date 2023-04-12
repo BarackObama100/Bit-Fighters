@@ -164,7 +164,14 @@ case '6':
 break
 
 case '3':
-  gravity = 0
+  player.velocity.x = 0
+  break
+
+
+case ' ':
+  bob.velocity.y = bob.velocity.y -20
+  player.velocity.y = player.velocity.y -20
+  enemy.velocity.y = enemy.velocity.y -20
   break
 }
 // logs the information in the console

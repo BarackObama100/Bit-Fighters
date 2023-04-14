@@ -93,7 +93,7 @@ if (this.position.x <= 0){
   
 
         else {
-        this.velocity.y = this.velocity.y + gravity
+        this.velocity.y = this.velocity.y //+ gravity
       
         }
     }
@@ -166,7 +166,11 @@ break
 case '3':
   player.velocity.x = 0
   break
-
+case '7':
+  player.velocity.y = 0
+  player.velocity.x = 0
+  break
+ 
 
 case ' ':
   bob.velocity.y = bob.velocity.y -20

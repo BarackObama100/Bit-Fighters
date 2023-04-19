@@ -12,7 +12,7 @@ import './style.css';
 // Write Javascript code!
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-canvas.width = 1024;
+canvas.width = 1390;
 canvas.height = 576;
 c.fillStyle = 'lightblue';
 c.fillRect(0, 0, canvas.width, canvas.height);
@@ -70,9 +70,9 @@ if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.
 
   
 
-if (this.position.x >= 1000){
+if (this.position.x >= 1390){
     this.velocity.x = 0
-    this.position.x = 1000
+    this.position.x = 1390
 }
 
 if (this.position.x <= 0){
@@ -104,11 +104,11 @@ const player = new Sprite({
   velocity: { x: 0, y: 10 },
 });
 const bob = new Sprite({
-  position: { x: 450, y: 20 },
+  position: { x: 695, y: 20 },
   velocity: { x: 0, y: 10 },
 });
 const enemy = new Sprite({
-  position: { x: 900, y: 20 },
+  position: { x: 1270, y: 20 },
   velocity: { x: 0, y: 10 },
 });
 

@@ -1,10 +1,11 @@
 //   TO DO
-// freeze button #2  dont use 1,gravity needs to be changed to be able to freeze
+// freeze button #2  dont use 1,gravity needs to be changed to be able to freeze✔️
 // bigger and smaller character buttons#3
 // disappear on contact with enemy 
-// collision detecter
-// interesting map(platforms,details)  #1
+// collision detecter✔️ 
+// interesting map(platforms,details)  #1 ✔️
 // add detail to character(face,sword,legs)
+// restart button
 
 // Import stylesheets
 import './style.css';
@@ -58,7 +59,7 @@ class Sprite {
 		this.position.x = this.velocity.x + this.position.x;
     
 
-// the barriers for the game'
+// platform code
 if (this.position.x > 500 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
   this.velocity.y = -1
   
@@ -69,7 +70,7 @@ if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.
 }
 
   
-
+// the barriers for the game
 if (this.position.x >= 1390){
     this.velocity.x = 0
     this.position.x = 1390
@@ -98,6 +99,7 @@ if (this.position.x <= 0){
         }
     }
   }
+
 // the position of the character
 const player = new Sprite({
   position: { x: 20, y: 20 },
@@ -120,6 +122,16 @@ function animate() {
 	player.update("blue");
 	enemy.update("red");
   bob.update("orange")
+  // collision detector
+  if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width ){
+    console.log("collision detected")
+   }
+  if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width ){
+    console.log("collision detected")
+   }
+  if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width ){
+    console.log("collision detected")
+   } 
 }
 animate();
 // the movement controls for the characters

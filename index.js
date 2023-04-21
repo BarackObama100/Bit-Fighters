@@ -182,7 +182,15 @@ case '7':
   player.velocity.y = 0
   player.velocity.x = 0
   break
- 
+ case 'o':
+player.width = 300
+player.height = 300
+case 'i':
+player.width = 50
+player.height = 50
+case '=':
+player.height = 150
+player.width = 100
 
 case ' ':
   bob.velocity.y = bob.velocity.y -20

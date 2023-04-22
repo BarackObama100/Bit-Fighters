@@ -5,7 +5,7 @@
 // collision detecter✔️ 
 // interesting map(platforms,details)  #1 ✔️
 // add detail to character(face,sword,legs)
-// restart button
+// restart button✔️
 
 // Import stylesheets
 import './style.css';
@@ -182,20 +182,34 @@ case '7':
   player.velocity.y = 0
   player.velocity.x = 0
   break
- case 'o':
-player.width = 300
-player.height = 300
-case 'i':
-player.width = 50
-player.height = 50
-case '=':
-player.height = 150
+ case '1':
+player.width = 200
+player.height = 200
+bob.width = 200
+bob.height = 200
+enemy.width = 200
+enemy.height = 200
+break
+case '2':
+player.width = 30
+player.height = 30
+bob.width = 30
+bob.height = 30
+enemy.width = 30
+enemy.height = 30
+break
+case '3':
 player.width = 100
-
+player.height = 150
+bob.width = 100
+bob.height = 150
+enemy.width = 100
+enemy.height = 150
+break
 case ' ':
-  bob.velocity.y = bob.velocity.y -20
-  player.velocity.y = player.velocity.y -20
-  enemy.velocity.y = enemy.velocity.y -20
+  bob.velocity.y = bob.velocity.y +20
+  player.velocity.y = player.velocity.y +20
+  enemy.velocity.y = enemy.velocity.y +20
   break
 }
 // logs the information in the console

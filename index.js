@@ -1,11 +1,16 @@
 //   TO DO
-// freeze button #2  dont use 1,gravity needs to be changed to be able to freeze✔️
-// bigger and smaller character buttons#3
-// disappear on contact with enemy 
-// collision detecter✔️ 
-// interesting map(platforms,details)  #1 ✔️
 // add detail to character(face,sword,legs)
+// add levels
+// 
 // restart button✔️
+// platforms ✔️
+// collision detecter✔️ 
+// bigger and smaller character buttons✔️
+// freeze button✔️       (dont use 1,gravity needs to be changed to be able to freeze)
+// disappear on contact with enemy ✔️
+// 
+// 
+// 
 
 // Import stylesheets
 import './style.css';
@@ -125,12 +130,20 @@ function animate() {
   // collision detector
   if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width ){
     console.log("collision detected")
+    player.velocity.y = 2000
+    bob.velocity.y = 2000
+
    }
   if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width ){
     console.log("collision detected")
+    player.velocity.y = 2000
+    enemy.position.y = 2000
    }
   if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width ){
     console.log("collision detected")
+    enemy.position.y = 1000
+    bob.velocity.y = 2000
+
    } 
 }
 animate();

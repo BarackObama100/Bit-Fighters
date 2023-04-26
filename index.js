@@ -1,7 +1,8 @@
 //   TO DO
 // add detail to character(face,sword,legs)
 // add levels
-// 
+// add victory feature
+//
 // restart button✔️
 // platforms ✔️
 // collision detecter✔️ 

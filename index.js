@@ -52,7 +52,6 @@ class Sprite {
     c.fillRect(this.position.x, this.position.y, this.width, this.height,this.ablock);
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
-    c.fillRect(this.line.position.x,this.line.position.y,this.line.width,this.line.height)
     c.fillStyle = "black";
     c.fillRect(512,500,100,50)
   }
@@ -130,19 +129,19 @@ function animate() {
   // collision detector
   if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width ){
     console.log("collision detected")
-    player.velocity.y = 5000
-    bob.velocity.y = 5000
+    player.velocity.x = 5000
+    bob.velocity.x = 5000
 
    }
   if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width ){
     console.log("collision detected")
-    c.clearRect ( 695 , 20 , 100 , 150 );
-    enemy.position.y = 5000
+    enemy.position.x = 5000
+    player.position.x = 5000
    }
   if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width ){
     console.log("collision detected")
-    enemy.velocity.y = 5000
-    bob.velocity.y = 5000
+    enemy.velocity.x = 5000
+    bob.velocity.x = 5000
 
    } 
 }

@@ -40,11 +40,11 @@ class Sprite {
         height: 75,
         width: -25
     }
-    this.line = {
-      position:this.position,
-      height:-1000,
-      width:1
-    }
+   // this.line = {
+     // position:this.position,
+     // height:-1000,
+     // width:1
+  //  }
   }
 // creating the character
   draw(color) {
@@ -130,19 +130,19 @@ function animate() {
   // collision detector
   if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width ){
     console.log("collision detected")
-    player.velocity.y = 2000
-    bob.velocity.y = 2000
+    player.velocity.y = 5000
+    bob.velocity.y = 5000
 
    }
   if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width ){
     console.log("collision detected")
-    player.velocity.y = 2000
-    enemy.position.y = 2000
+    c.clearRect ( 695 , 20 , 100 , 150 );
+    enemy.position.y = 5000
    }
   if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width ){
     console.log("collision detected")
-    enemy.position.y = 1000
-    bob.velocity.y = 2000
+    enemy.velocity.y = 5000
+    bob.velocity.y = 5000
 
    } 
 }
@@ -211,14 +211,7 @@ bob.height = 30
 enemy.width = 30
 enemy.height = 30
 break
-case '3':
-player.width = 100
-player.height = 150
-bob.width = 100
-bob.height = 150
-enemy.width = 100
-enemy.height = 150
-break
+
 case ' ':
   bob.velocity.y = bob.velocity.y +20
   player.velocity.y = player.velocity.y +20

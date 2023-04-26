@@ -54,8 +54,9 @@ class Sprite {
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
     c.fillStyle = "black";
-    c.fillRect(512,500,100,50)
-  }
+    //c.fillRect(512,500,100,50)  }
+    c.fillRect(695,500,100,200)
+    //          x   y   w   h  
   // updating the game positions
   update(color) {
 		c.fillStyle = color
@@ -65,14 +66,14 @@ class Sprite {
     
 
 // platform code
-if (this.position.x > 500 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
-  this.velocity.y = -1
+//if (this.position.x > 500 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
+  //this.velocity.y = -1
   
-}
-if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
-  this.velocity.y = -1
+//}
+//if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
+ // this.velocity.y = -1
   
-}
+//}
 
   
 // the barriers for the game

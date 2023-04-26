@@ -2,16 +2,23 @@
 // add detail to character(face,sword,legs)
 // add levels
 // add victory feature
-//
+// you dont die if you hit someone
+// 3 lives
+//level buttons
+// accurate detector
+// higher velocity = who hit the person
 // restart button✔️
 // platforms ✔️
 // collision detecter✔️ 
 // bigger and smaller character buttons✔️
 // freeze button✔️       (dont use 1,gravity needs to be changed to be able to freeze)
 // disappear on contact with enemy ✔️
-// 
-// 
-// 
+// To Learn
+// add blocks that can operate
+// detection system for the platform thats within a range
+//
+//
+//
 
 // Import stylesheets
 import './style.css';
@@ -139,7 +146,7 @@ function animate() {
     enemy.position.y = 5000
     player.position.y = 5000
    }
-  if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height){
+  if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height ){
     console.log("collision detected")
     enemy.velocity.y = 5000
     bob.velocity.y = 5000

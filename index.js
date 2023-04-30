@@ -1,10 +1,8 @@
 //   TO DO
 // add detail to character(face,sword,legs)
-// add levels
 // add victory feature
 // you dont die if you hit someone
 // 3 lives
-//level buttons
 // accurate detector
 // higher velocity = who hit the person
 // restart button✔️
@@ -13,6 +11,9 @@
 // bigger and smaller character buttons✔️
 // freeze button✔️       (dont use 1,gravity needs to be changed to be able to freeze)
 // disappear on contact with enemy ✔️
+//// add levels✔️
+
+
 // To Learn
 // add blocks that can operate
 // detection system for the platform thats within a range
@@ -152,6 +153,9 @@ function animate() {
     bob.velocity.y = 5000
 
    } 
+}
+if (player.position.x = 1000 < 0){
+  console.log('victorys')
 }
 animate();
 // the movement controls for the characters

@@ -126,7 +126,6 @@ const enemy = new Sprite({
   position: { x: 1270, y: 20 },
   velocity: { x: 0, y: 10 },
 });
-
 // running the game and its colors
 function animate() {
 	window.requestAnimationFrame(animate);

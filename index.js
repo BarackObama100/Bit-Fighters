@@ -1,6 +1,6 @@
 //   TO DO
 // add detail to character(face,sword,legs)
-// add victory feature
+// add victory feature #1
 // you dont die if you hit someone
 // 3 lives
 // accurate detector
@@ -11,7 +11,7 @@
 // bigger and smaller character buttons✔️
 // freeze button✔️       (dont use 1,gravity needs to be changed to be able to freeze)
 // disappear on contact with enemy ✔️
-//// add levels✔️
+// add levels✔️
 
 
 // To Learn
@@ -62,7 +62,7 @@ class Sprite {
     c.fillRect(this.ablock.position.x,this.ablock.position.y,this.ablock.width,this.ablock.height)
     c.fillRect(this.fight.position.x,this.fight.position.y,this.fight.width,this.fight.height)
     c.fillStyle = "black";
-    c.fillRect(512,500,100,50)
+    c.fillRect(630,500,100,-50)
   }
   // updating the game positions
   update(color) {
@@ -73,11 +73,11 @@ class Sprite {
     
 
 // platform code
-if (this.position.x > 500 && this.position.x < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
+if (this.position.x > 600 && this.position.x < 730 && this.position.y + 300 + this.velocity.y > 600 && this.position.y +300 + this.velocity.y < 700){
   this.velocity.y = -1
   
 }
-if (this.position.x + 100 > 500 && this.position.x + 100 < 612 && this.position.y + 150 + this.velocity.y > 500 && this.position.y +150 + this.velocity.y < 550){
+if (this.position.x + 100 > 600 && this.position.x + 250 < 730 && this.position.y + 300 + this.velocity.y > 600 && this.position.y +150 + this.velocity.y < 7){
   this.velocity.y = -1
   
 }

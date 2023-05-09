@@ -119,7 +119,7 @@ const player = new Sprite({
   velocity: { x: 0, y: 10 },
 });
 const bob = new Sprite({
-  position: { x: 695, y: 20 },
+  position: { x: 630, y: 20 },
   velocity: { x: 0, y: 10 },
 });
 const enemy = new Sprite({
@@ -135,7 +135,7 @@ function animate() {
 	enemy.update("red");
   bob.update("orange")
   // collision detector
-  if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width && player.position.y >= bob.position.y  && player.position.y + player.height <= bob.position.y + bob.height  ){
+  if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width && player.position.y >= bob.position.y  && player.position.y + player.height <= bob.position.y + bob.height ){
     console.log("collision detected")
     player.velocity.y = 5000
     bob.velocity.y = 5000
@@ -152,6 +152,7 @@ function animate() {
     bob.velocity.y = 5000
 
    } 
+
 }
 if (player.position.x = 1000 < 0){
   console.log('victorys')
@@ -204,6 +205,10 @@ case '3':
 case '7':
   player.velocity.y = 0
   player.velocity.x = 0
+  bob.velocity.y = 0
+  bob.velocity.x = 0
+  enemy.velocity.y = 0
+  enemy.velocity.x = 0
   break
  case '1':
 player.width = 200

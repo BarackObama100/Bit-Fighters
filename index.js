@@ -177,7 +177,7 @@ case 'ArrowUp':
   enemy.velocity.y = enemy.velocity.y -20
 break
 case 'ArrowDown':
-enemy.velocity.y = enemy.velocity.y +150
+enemy.velocity.y = enemy.velocity.y +20
 break
 case 'ArrowLeft':
 enemy.velocity.x = enemy.velocity.x -5
@@ -185,6 +185,8 @@ break
 case 'ArrowRight':
 enemy.velocity.x = enemy.velocity.x +5
 break
+case '1':
+player.velocity.y = enemy.velocity.y +150
 case '8':
 bob.velocity.y = bob.velocity.y -20
 break

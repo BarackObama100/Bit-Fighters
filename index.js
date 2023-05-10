@@ -174,10 +174,10 @@ player.velocity.x = player.velocity.x +5
 break
 
 case 'ArrowUp':
-  enemy.velocity.y = enemy.velocity.y -250
+  enemy.velocity.y = enemy.velocity.y -20
 break
 case 'ArrowDown':
-enemy.velocity.y = enemy.velocity.y +20
+enemy.velocity.y = enemy.velocity.y +50
 break
 case 'ArrowLeft':
 enemy.velocity.x = enemy.velocity.x -5

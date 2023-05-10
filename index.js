@@ -139,18 +139,21 @@ function animate() {
     console.log("collision detected")
     player.velocity.y = 5000
     bob.velocity.y = 5000
+    console.log("Enemy Wins!")
 
    }
   if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width && player.position.y >= enemy.position.y  && player.position.y + player.height <= enemy.position.y + enemy.height){
     console.log("collision detected")
     enemy.position.y = 5000
     player.position.y = 5000
+    console.log("Bob Wins!")
+
    }
   if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height ){
     console.log("collision detected")
     enemy.velocity.y = 5000
     bob.velocity.y = 5000
-
+    console.log("Player Wins!")
    } 
 
 }

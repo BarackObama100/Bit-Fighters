@@ -25,7 +25,6 @@
 import './style.css';
 
 // Write Javascript code!
-const appDiv = document.getElementById('app');
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 canvas.width = 1390;
@@ -141,21 +140,20 @@ function animate() {
     player.velocity.y = 5000
     bob.velocity.y = 5000
     console.log("Enemy Wins!")
-    appDiv.innerHTML = `<h1>Enemy Wins!</h1>`;
+
    }
   if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width && player.position.y >= enemy.position.y  && player.position.y + player.height <= enemy.position.y + enemy.height){
     console.log("collision detected")
     enemy.position.y = 5000
     player.position.y = 5000
     console.log("Bob Wins!")
-    appDiv.innerHTML = `<h1>Bob Wins!</h1>`;
+  
    }
   if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height ){
     console.log("collision detected")
     enemy.velocity.y = 5000
     bob.velocity.y = 5000
     console.log("Player Wins!")
-    appDiv.innerHTML = `<h1>Player Wins!</h1>`;
    } 
 
 }

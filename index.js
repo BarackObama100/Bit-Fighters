@@ -2,7 +2,7 @@
 // add detail to character(face,sword,legs)
 // add victory feature #1
 // you dont die if you hit someone
-// 3 lives
+// 3 lives/health/bar
 // accurate detector
 // higher velocity = who hit the person
 // restart button✔️
@@ -13,13 +13,13 @@
 // disappear on contact with enemy ✔️
 // add levels✔️
 
-
 // To Learn
 // add blocks that can operate
 // detection system for the platform thats within a range
 //
 //
 //
+
 
 // Import stylesheets
 import './style.css';
@@ -135,6 +135,14 @@ function animate() {
 	enemy.update("red");
   bob.update("orange")
   // collision detector
+if (player.position.x <= bob.position.x + 100 && player.position.x >= bob.position.x -100){
+  console.log("collision detected")
+  bob.velocity.y = 5000
+  console.log("Enemy Wins!")
+}
+
+
+
   if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width && player.position.y >= bob.position.y  && player.position.y + player.height <= bob.position.y + bob.height ){
     console.log("collision detected")
     player.velocity.y = 5000

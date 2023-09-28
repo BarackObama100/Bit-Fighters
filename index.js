@@ -135,36 +135,73 @@ function animate() {
 	enemy.update("red");
   bob.update("orange")
   // collision detector
-if (player.position.x <= bob.position.x + 100 && player.position.x >= bob.position.x -100){
-  console.log("collision detected")
-  bob.velocity.y = 5000
-  console.log("Enemy Wins!")
-}
-
-
-
-  if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width && player.position.y >= bob.position.y  && player.position.y + player.height <= bob.position.y + bob.height ){
-    console.log("collision detected")
+  var bobmag = (bob.velocity.x ** 2 + bob.velocity.y ** 2)** 0.5
+  var playermag = (player.velocity.x ** 2 + bob.velocity.y ** 2)** 0.5
+  var enemymag = (enemy.velocity.x ** 2 + enemy.velocity.y ** 2)** 0.5
+if (player.position.x <= bob.position.x + 100 && player.position.x >= bob.position.x -100 && player.position.y <= bob.position.y + 100 && player.position.x >= bob.position.y -100){
+  if (bobmag > playermag){
     player.velocity.y = 5000
+    player.velocity.x = 5000
+  } else{
+    bob.velocity.x = 5000
     bob.velocity.y = 5000
-    console.log("Enemy Wins!")
-
-   }
-  if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width && player.position.y >= enemy.position.y  && player.position.y + player.height <= enemy.position.y + enemy.height){
-    console.log("collision detected")
-    enemy.position.y = 5000
-    player.position.y = 5000
-    console.log("Bob Wins!")
-  
-   }
-  if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height ){
-    console.log("collision detected")
-    enemy.velocity.y = 5000
-    bob.velocity.y = 5000
-    console.log("Player Wins!")
-   } 
-
+  }
 }
+  if (enemy.position.x <= bob.position.x + 100 && enemy.position.x >= bob.position.x -100 && enemy.position.y <= bob.position.y + 100 && enemy.position.x >= bob.position.y -100){
+    if (bobmag > enemymag){
+      enemy.velocity.y = 5000
+      enemy.velocity.x = 5000
+    } else{
+      bob.velocity.x = 5000
+      bob.velocity.y = 5000
+    }
+  }
+    if (enemy.position.x <= player.position.x + 100 && enemy.position.x >= player.position.x -100 && player.position.y <= enemy.position.y + 100 && player.position.x >= enemy.position.y -100){
+      if (playermag > enemymag){
+        enemy.velocity.y = 5000
+        enemy.velocity.x = 5000
+      } else{
+        player.velocity.x = 5000
+        player.velocity.y = 5000
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// console.log("collision detected")
+  // bob.velocity.y = 5000
+  // console.log("Enemy Wins!")
+
+  // if (player.position.x >= bob.position.x  && player.position.x + player.width <= bob.position.x + bob.width && player.position.y >= bob.position.y  && player.position.y + player.height <= bob.position.y + bob.height ){
+  //   console.log("collision detected")
+  //   player.velocity.y = 5000
+  //   bob.velocity.y = 5000
+  //   console.log("Enemy Wins!")
+
+  //  }
+  // if (player.position.x >= enemy.position.x  && player.position.x + player.width <= enemy.position.x + enemy.width && player.position.y >= enemy.position.y  && player.position.y + player.height <= enemy.position.y + enemy.height){
+  //   console.log("collision detected")
+  //   enemy.position.y = 5000
+  //   player.position.y = 5000
+  //   console.log("Bob Wins!")
+  
+  //  }
+  // if (enemy.position.x >= bob.position.x  && enemy.position.x + enemy.width <= bob.position.x + bob.width && enemy.position.y >= bob.position.y  && enemy.position.y + enemy.height <= bob.position.y + bob.height ){
+  //   console.log("collision detected")
+  //   enemy.velocity.y = 5000
+  //   bob.velocity.y = 5000
+  //   console.log("Player Wins!")
+  //  } 
+
+
 
 animate();
 // the movement controls for the characters
